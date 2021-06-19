@@ -18,3 +18,31 @@ class Solution:
 # ===============
 
 
+class Solution:
+    def findCenter(self, edges: List[List[int]]) -> int:
+        
+        center = None
+        
+        for i in edges[0]:
+            if center == None:
+                for j in edges:
+                    if i in j:
+                        center = i
+                    else:
+                        center = None
+                        break
+            else:
+                break
+        
+        return center
+
+      # Alt solution:
+
+      if edges[0][0] in edges[1]:
+        return edges[0][0]
+      return edges[0][1]
+
+
+# ===============
+
+
